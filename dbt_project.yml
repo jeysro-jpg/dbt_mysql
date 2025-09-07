@@ -61,7 +61,7 @@ seeds:
          sale_id: integer
          customer_id: integer
          product_id: integer
-         quantity: integer
+         quantity: string
          sale_date: date
          total_amount: decimal(10,2)
         
