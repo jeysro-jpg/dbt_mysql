@@ -5,4 +5,4 @@ select
          city,
          state,
          country
-from {{ source('seeds_customers', 'customers') }}
+from {{ ref('customers') }}
