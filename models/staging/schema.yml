@@ -12,3 +12,34 @@ sources:
   - name: seeds_sales
     tables:
       - name: stg_sales
+
+models:
+  - name: stg_customers
+    description: "Tabla staging de clientes cargada desde seeds"
+    columns:
+      - name: customer_id
+        description: "Identificador único del cliente"
+        tests:
+          - unique
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "customer_id ~ '^10[0-9]{2}$'"
+
+      - name: city
+        description: "Ciudad del cliente"
+        tests:
+          - not_null
+          
+      - name: state
+        description: "Ciudad Estado del Cliente"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["NY", "CA", "ON", "IL", "NSW", "BC", "FL"]
+
+      - name: country
+        description: "Pais del Cliente"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["USA", "UK", "Canada", "France", "Australia", "Germany"]
