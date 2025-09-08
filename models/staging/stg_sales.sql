@@ -5,4 +5,4 @@ select
          quantity,
          sale_date,
          total_amount
-from {{ ref('sales') }}
+from {{ source('seeds_sales', 'sales') }}
