@@ -7,4 +7,4 @@ select
          color,
          stock_quantity,
          last_updated
-from {{ source('seeds_products', 'products') }}
+from {{ ref('products') }}
