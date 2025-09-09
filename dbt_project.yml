@@ -35,13 +35,11 @@ models:
     +materialized: view
     # Config indicated by + and applies to all files under models/example/
     staging:
-      +schema: qa_semana8
       +tags: ['staging']
-      
 
 seeds:   
-  mysql:   
-    +schema: seeds
+  mysql: 
+    +quote_columns: true
     customers: 
       +column_types:
          customer_id: integer
@@ -68,4 +66,3 @@ seeds:
          quantity: integer
          sale_date: date
          total_amount: decimal(10,2)
-        
