@@ -1,18 +1,5 @@
 version: 2
 
-sources:
-  - name: seeds_customers
-    tables:
-      - name: stg_customers
-
-  - name: seeds_products
-    tables:
-      - name: stg_products
-
-  - name: seeds_sales
-    tables:
-      - name: stg_sales
-
 models:
   - name: stg_customers
     description: "Tabla staging de clientes cargada desde seeds"
