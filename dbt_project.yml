@@ -41,6 +41,7 @@ seeds:
   mysql: 
     +quote_columns: true
     customers: 
+      schema: qa_semana8
       +column_types:
          customer_id: integer
          first_name: varchar(50)
@@ -48,6 +49,8 @@ seeds:
          city: varchar(30)
          state: varchar(30)
          country: varchar(30)
+         delimiter: ","
+         file_format: csv
     products: 
       +column_types:
          product_id: integer
